@@ -25,7 +25,8 @@ while True:
         break
     else:
         print('Invalid input. Please enter a number from either 1 or 2!')
-        db.close()
+    if db:
+    db.close()
 
 
 
