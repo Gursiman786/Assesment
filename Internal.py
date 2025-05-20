@@ -17,7 +17,7 @@ def create_table():
     db.close()
 
 while True:
-    userinput = input('What would you like to do:\n print all cars:\n Exit:\n')
+    userinput = input('What would you like to do:\n print all cars: {1}\n Exit:{2}\n')
     if userinput == '1':
         create_table()
     elif userinput == '2':
@@ -25,7 +25,6 @@ while True:
         break
     else:
         print('Invalid input. Please enter a number from either 1 or 2!')
-    if db:
     db.close()
 
 
