@@ -8,9 +8,9 @@ def create_table():
     sql = "SELECT * FROM Cars;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print(rows)
     print('ID       Name        Top Speed')
-
+    print(rows)
+    
     for row in rows:
         print(f"Row: {row[1]} {row[2]: > 200}")
 
@@ -22,8 +22,9 @@ def create_table2():
     sql = "SELECT * FROM Manufacturer;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print(rows)
     print('ID       Name of manufacturer')
+    print(rows)
+    
 
     for row in rows:
         print(f"Row: {row[1]} {row[2]}")
@@ -36,8 +37,9 @@ def create_table3():
     sql = "SELECT * FROM Engine;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print(rows)
     print('ID       Engine Type')
+    print(rows)
+    
 
     for row in rows:
         print(f"Row: {row[1]} {row[2]}")
@@ -45,7 +47,7 @@ def create_table3():
     db.close()
 
 while True:
-    userinput = input('What would you like to do:\n print all cars: {1}\n  print all Manufacturers:{2}\n print all Engines:{3}\n Exit:{4}\n')
+    userinput = input('What would you like to do:\n print all cars: {1}\n print all Manufacturers:{2}\n print all Engines:{3}\n Exit:{4}\n')
     if userinput == '1':
         create_table()
 
