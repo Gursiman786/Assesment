@@ -1,67 +1,71 @@
 import sqlite3
 SQLDATABASE = 'Cars.db'
 
+from colorama import Fore, Style
 
-def create_table():
+
+def Cars():
     db = sqlite3.connect(SQLDATABASE)
     cursor = db.cursor()
     sql = "SELECT * FROM Cars;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print('ID       Name        Top Speed')
-    #print(rows)
+    print(Fore.CYAN + 'Name                         Top Speed KM/H' + Style.RESET_ALL)
+
     
     for row in rows:
-        print(f"{row[1]:30} {row[2]}")
-
+        print(Fore.YELLOW + f"{row[1]:35} {row[2]}" + Style.RESET_ALL)
+ 
     db.close()
 
-def create_table2():
+def Manufacturer():
     db = sqlite3.connect(SQLDATABASE)
     cursor = db.cursor()
     sql = "SELECT * FROM Manufacturer;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print('ID       Name of manufacturer')
-    print(rows)
-    
+    print(Fore.LIGHTMAGENTA_EX  + 'ID               Name of manufacturer' + Style.RESET_ALL)
 
+    
     for row in rows:
-        print(f"Row: {row[1]} {row[2]}")
+        print(Fore.YELLOW + f"{row[0]} {row[1]:25}" + Style.RESET_ALL)
 
     db.close()
 
-def create_table3():
+def Engine():
     db = sqlite3.connect(SQLDATABASE)
     cursor = db.cursor()
     sql = "SELECT * FROM Engine;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print('ID       Engine Type')
-    print(rows)
+    print(Fore.BLUE + 'ID       Engine Type' + Style.RESET_ALL)
+ 
     
 
     for row in rows:
-        print(f"Row: {row[1]} {row[2]}")
+        print(Fore.YELLOW + f"{row[0]:3} {row[1]}" + Style.RESET_ALL)
 
     db.close()
 
 while True:
     userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
     if userinput == '1':
-        create_table()
+       Cars()
+       userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
     if userinput == '2':
-        create_table2()
+        Manufacturer()
+        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
     if userinput == "3":  
-        create_table3()
+        Engine()
+        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
-    elif userinput == '4':
+    if userinput == '4':
         print('Exiting...........')
         break
     else:
-        print('Invalid input. Please enter a number from either 1 or 2!')
+        print('Invalid input. Please enter a number from either 1-4!')
     db.close()
 
 
