@@ -47,22 +47,16 @@ def create_table3():
     db.close()
 
 while True:
-    userinput = input('What would you like to do:\n print all cars: {1}\n print all Manufacturers:{2}\n print all Engines:{3}\n Exit:{4}\n')
+    userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers:{2}\n Print all Engines:{3}\n Exit:{4}\n')
     if userinput == '1':
         create_table()
 
-
-        userinput = input('What would you like to do:\n print all cars: {1}\n  print all Manufacturers:{2}\n print all Engines:{3}\n Exit:{4}\n')
     if userinput == '2':
         create_table2()
 
-
-        userinput = input('What would you like to do:\n print all cars: {1}\n  print all Manufacturers:{2}\n print all Engines:{3}\n Exit:{4}\n')
-    if userinput == '3':
+    if userinput == "3":  
         create_table3()
 
-
-        userinput = input('What would you like to do:\n print all cars: {1}\n  print all Manufacturers:{2}\n print all Engines:{3}\n Exit:{4}\n')
     elif userinput == '4':
         print('Exiting...........')
         break
