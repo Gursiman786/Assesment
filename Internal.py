@@ -40,8 +40,6 @@ def Engine():
     rows = cursor.fetchall()
     print(Fore.BLUE + 'ID       Engine Type' + Style.RESET_ALL)
  
-    
-
     for row in rows:
         print(Fore.YELLOW + f"{row[0]:3} {row[1]}" + Style.RESET_ALL)
 
@@ -66,6 +64,7 @@ while True:
         break
     else:
         print('Invalid input. Please enter a number from either 1-4!')
+        continue
     db.close()
 
 
