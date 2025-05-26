@@ -48,9 +48,9 @@ def Engine():
     db.close()
 
 while True:
-    userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
+    userinput = input(Fore.LIGHTMAGENTA_EX + 'What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n' + Style.RESET_ALL)
     if userinput == '1':
-       Cars()
+        Cars()
        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
     if userinput == '2':
