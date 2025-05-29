@@ -1,6 +1,6 @@
 import sqlite3
 from colorama import Fore, Style
-
+'''Start of the best Cars database ever :)'''
 SQLDATABASE = 'Cars.db'
 
 # This is the table relating to the Cars table of the database
@@ -45,6 +45,7 @@ def Engine():
     # Prints out all the data
     for row in rows:
         print(Fore.YELLOW + f"{row[0]:3} {row[1]}" + Style.RESET_ALL)
+        
 
     db.close()
 
