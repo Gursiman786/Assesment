@@ -1,5 +1,3 @@
-
-'''THIS IS DATABASE ON CARS :)'''
 import sqlite3
 SQLDATABASE = 'Cars.db'
 
@@ -66,12 +64,12 @@ while True:
 
     elif userinput == '4':
         print('Exiting...........')
+        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
+
         break
     else:    
         #For out of range inputs
         print('Invalid input. Please enter a number from either 1-4!')
-        continue
-       
     db.close()
 
 
