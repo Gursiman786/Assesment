@@ -51,7 +51,7 @@ def Engine():
 
 # While loop for user input
 while True:
-    userinput = input('What would you like to do:\nPrint all Cars: {1}\nPrint all Manufacturers: {2}\nPrint all Engines: {3}\nExit: {4}\n')
+    userinput = input(Fore.YELLOW + 'What would you like to do:\nPrint all Cars: {1}\nPrint all Manufacturers: {2}\nPrint all Engines: {3}\nExit: {4}\n' + Style.RESET_ALL)
 
     if userinput == '1':
         Cars()
@@ -59,11 +59,11 @@ while True:
     elif userinput == '2':
         Manufacturer()
 
-    elif userinput == "3":
+    elif userinput =="3":
         Engine()
 
     elif userinput == '4':
-        print('Exiting...........')
+        print(Fore.LIGHTMAGENTA_EX + 'Exiting...........')
         break
 
     else:
