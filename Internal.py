@@ -1,9 +1,9 @@
 import sqlite3
-SQLDATABASE = 'Cars.db'
-
 from colorama import Fore, Style
 
-#This is the table relating to the Cars table of the database
+SQLDATABASE = 'Cars.db'
+
+# This is the table relating to the Cars table of the database
 def Cars():
     db = sqlite3.connect(SQLDATABASE)
     cursor = db.cursor()
@@ -12,26 +12,28 @@ def Cars():
     rows = cursor.fetchall()
     print(Fore.CYAN + 'Name                         Top Speed KM/H' + Style.RESET_ALL)
 
-    #prints out all the DATA
+    # Prints out all the data
     for row in rows:
         print(Fore.YELLOW + f"{row[1]:35} {row[2]}" + Style.RESET_ALL)
- 
+    
     db.close()
-#This is the table relating to the Maufacturuer table of the database
+
+# This is the table relating to the Manufacturer table of the database
 def Manufacturer():
     db = sqlite3.connect(SQLDATABASE)
     cursor = db.cursor()
     sql = "SELECT * FROM Manufacturer;"
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print(Fore.LIGHTMAGENTA_EX  + 'ID               Name of manufacturer' + Style.RESET_ALL)
+    print(Fore.LIGHTMAGENTA_EX + 'ID               Name of manufacturer' + Style.RESET_ALL)
 
-    #prints out all the DATA
+    # Prints out all the data
     for row in rows:
         print(Fore.YELLOW + f"{row[0]} {row[1]:25}" + Style.RESET_ALL)
-
+    
     db.close()
-#This is the table relating to the Engine table of the database
+
+# This is the table relating to the Engine table of the database
 def Engine():
     db = sqlite3.connect(SQLDATABASE)
     cursor = db.cursor()
@@ -39,44 +41,30 @@ def Engine():
     cursor.execute(sql)
     rows = cursor.fetchall()
     print(Fore.BLUE + 'ID       Engine Type' + Style.RESET_ALL)
- 
-    
- #prints out all the DATA
+
+    # Prints out all the data
     for row in rows:
         print(Fore.YELLOW + f"{row[0]:3} {row[1]}" + Style.RESET_ALL)
 
     db.close()
-# While true loop fpor userinput
+
+# While loop for user input
 while True:
-    #variable 'Userinput'
-    userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
+    userinput = input('What would you like to do:\nPrint all Cars: {1}\nPrint all Manufacturers: {2}\nPrint all Engines: {3}\nExit: {4}\n')
+
     if userinput == '1':
         Cars()
-        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
     elif userinput == '2':
         Manufacturer()
-        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
-    elif userinput == "3":  
+    elif userinput == "3":
         Engine()
-        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
 
     elif userinput == '4':
         print('Exiting...........')
-        userinput = input('What would you like to do:\n Print all Cars: {1}\n Print all Manufacturers: {2}\n Print all Engines: {3}\n Exit: {4}\n')
-
         break
-    else:    
-        #For out of range inputs
+
+    else:
+        # For out-of-range inputs
         print('Invalid input. Please enter a number from either 1-4!')
-    db.close()
-
-
-
-
-
-
-
-
-
