@@ -72,4 +72,4 @@ while True:
 
     else:
         # For out-of-range inputs
-        print(Fore.GREEN'Invalid input. Please enter a number from either 1,2,3,4!')
+        print( Fore.GREEN + 'Invalid input. Please enter a number from either 1,2,3,4!')
